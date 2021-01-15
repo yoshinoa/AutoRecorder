@@ -14,4 +14,7 @@ This script records a timed set of time of a zoom meeting with Open Broadcast St
 
 Set zoom link in string and set when and for how long to record the meeting in appropriate places.
 
-**I created this script for myself, for my own use and unexpected errors may pop up.**
+**Please only use this with consent of parties present.**
+
+##Todo
+add lists of times and meetings
