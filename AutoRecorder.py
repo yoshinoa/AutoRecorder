@@ -3,11 +3,11 @@ from pynput.keyboard import Key, Controller
 
 keyboard = Controller()
 
-link, meeting_hour, passcode = functions.get_information()
+link, meeting_hour, meeting_minute, meeting_length, passcode = functions.get_information()
 
 while True:
     # set time for start of meeting hour here
-    if datetime.datetime.now().time().hour == meeting_hour:
+    if datetime.datetime.now().time().hour == meeting_hour and datetime.datetime.now().time().minute == meeting_minute:
         webbrowser.open(link)
         break
     else:
@@ -24,7 +24,7 @@ bashCommand = 'start /d "C:/Program Files/obs-studio/bin/64bit" obs64.exe --star
 os.system(bashCommand)
 
 # set the length of meeting in seconds
-time.sleep(3960)
+time.sleep(meeting_length)
 os.system("taskkill /F /IM Zoom.exe")
 time.sleep(1)
 os.system("taskkill /F /IM obs64.exe")
